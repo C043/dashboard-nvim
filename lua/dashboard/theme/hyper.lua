@@ -79,16 +79,12 @@ local function load_packages(config)
 
   local package_manager_stats = utils.get_package_manager_stats()
   local lines = {}
+  local mantras = { 'You are capable.', 'Feel the fear and do it anyway.', 'Plan before coding.' }
+  local randomIndex = math.random(1, #mantras)
   if package_manager_stats.name == 'lazy' then
     lines = {
       '',
-      'You are capable.',
-      --'Startuptime: ' .. package_manager_stats.time .. ' ms',
-      'Plugins: '
-        .. package_manager_stats.loaded
-        .. ' loaded / '
-        .. package_manager_stats.count
-        .. ' installed',
+      mantras[randomIndex],
     }
   else
     lines = {
