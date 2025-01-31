@@ -82,7 +82,7 @@ local function load_packages(config)
   if package_manager_stats.name == 'lazy' then
     lines = {
       '',
-      'You are capable.'
+      'You are capable.',
       --'Startuptime: ' .. package_manager_stats.time .. ' ms',
       'Plugins: '
         .. package_manager_stats.loaded
