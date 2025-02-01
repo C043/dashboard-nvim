@@ -458,7 +458,7 @@ end
 local function gen_footer(config)
   local footer = {
     '',
-    ' 🚀 Sharp tools make good work.',
+    ' 💾 Create design build code for everyone.',
   }
 
   if type(config.footer) == 'string' then
