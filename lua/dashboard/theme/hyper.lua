@@ -161,7 +161,7 @@ local function mru_list(config)
     icon_hl = 'DashboardMruIcon',
     label = ' Most Recent Files:',
     cwd_only = false,
-    enable = true,
+    enable = false,
   }, config.mru or {})
 
   if not config.mru.enable then
