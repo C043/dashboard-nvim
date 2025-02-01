@@ -405,7 +405,7 @@ local function gen_center(plist, config)
   end
 
   -- initialize the cursor pos
-  api.nvim_win_set_cursor(config.winid, { first_line + 3, start_col + 4 })
+  api.nvim_win_set_cursor(config.winid, { first_line + 2, start_col + 5 })
 
   api.nvim_buf_add_highlight(config.bufnr, 0, 'DashboardMruTitle', first_line + plist_len, 0, -1)
   api.nvim_buf_add_highlight(
@@ -457,8 +457,7 @@ end
 
 local function gen_footer(config)
   local footer = {
-    '',
-    ' 💾 Create design build code for everyone.',
+    ' 💾 Create Design Code Build for everyone.',
   }
 
   if type(config.footer) == 'string' then
@@ -525,7 +524,7 @@ local function theme_instance(config)
     load_packages(config)
     gen_center(plist, config)
     gen_footer(config)
-    map_key(config, config.confirm_key or '<CR>')
+    --map_key(config, config.confirm_key or '<CR>')
     require('dashboard.events').register_lsp_root(config.path)
     local size = math.floor(vim.o.lines / 2)
       - math.ceil(api.nvim_buf_line_count(config.bufnr) / 2)
