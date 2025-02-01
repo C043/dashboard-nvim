@@ -115,7 +115,9 @@ local function week_header(concat, append)
   local week = week_ascii_text()
   local daysoftheweek =
     { 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }
-  local day = daysoftheweek[os.date('*t').wday]
+  -- local day = daysoftheweek[os.date('*t').wday]
+  local randomIndex = math.random(1, #daysoftheweek)
+  local day = daysoftheweek[randomIndex]
   local tbl = week[day]
   if append then
     vim.list_extend(tbl, append)
